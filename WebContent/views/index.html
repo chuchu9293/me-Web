@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+<title>跳转页</title>
+</head>
+<body>
+<script>
+$.ajax({
+    type: "GET",
+    url: "http://115.28.88.165/webService/me/isAvailable",
+   // data: {username:$("#username").val(), content:$("#content").val()},
+    dataType: "text",
+    success: function(data){
+    	if(date=="true")
+    		window.location.href="http://me.likeyichu.com/";
+    	else
+    		window.location.href="http://www.likeyichu.com/indexGit.html";
+             },
+    error:function(){
+    	window.location.href="http://www.likeyichu.com/indexGit.html";
+    }
+});
+</script>
+</body>
+</html>

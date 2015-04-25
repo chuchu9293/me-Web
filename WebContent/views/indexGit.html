@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<link href="css/1.css"
+         rel="stylesheet"
+         type="text/css">
+<title>杜易初 网站首页</title>
+<meta content="杜易初"
+         name="keywords">
+<meta content="杜易初"
+         name="description">
+<meta content="杜易初"
+         name="author">
+<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+<script> 
+function myFunction(){
+	 var div=$("div#animation");
+    div.animate({height:'300px',opacity:'0.2'},"slow");
+    div.animate({width:'300px',opacity:'0.7'},"slow");
+    div.animate({height:'30px',opacity:'0.2'},"slow");
+    div.animate({width:'30px',opacity:'0.7'},"slow");
+	myFunction();
+}
+$(document).ready(function(){
+	myFunction();
+});
+</script>
+</head>
+<body id="id1">
+<br />
+<br />
+<div id="animation" style="background:rgb(37,211,211);height:30px;width:30px;position:absolute;">
+W e l c o m e
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="class1"> <a href="http://blog.csdn.net/chuchus"
+      style="text-decoration:none;color:rgba(255,0,128,0.4)"
+      target="_blank">cc's csdnBlog</a> &nbsp;&nbsp;&nbsp; <a href=" http://346050153.qzone.qq.com"
+      style="text-decoration:none;color:rgba(255,0,128,0.4)"
+      target="_blank">cc's Qzone</a> &nbsp;&nbsp;&nbsp; <a href=" http://yinwang.org"
+      style="text-decoration:none;color:rgba(255,0,128,0.4)"
+      target="_blank">yinwang.org</a>
+  <p>
+    <AUDIO CONTROLS="controls"
+          SRC="audio/陈冠希-单恋高校.mp3"autoplay="autoplay"> 抱歉，audio标签需 IE9 或 Chrome3 及以上版本支持 </AUDIO>
+  </p>
+</div>
+<div id="footer"> <span style="color:rgba(255,0,128,0);font-size:1px;">关于 杜易初 联系 杜易初 我是杜易初 SEO作用^_^</span>
+  <hr />
+  <p>&copy;2015 yichu<span id="id2"></span> </p>
+</div>
+</body>
+</html>
