@@ -9,18 +9,12 @@
 <body>
 	<%
 		String str = request.getRequestURL().toString();
-		if(str.contains("115.28.88.165"))
-				response.sendRedirect("index.jsp");
-		int pos=str.indexOf(".likeyichu.com");
-		str = str.substring(0, pos);
 		if (str.contains("hxq"))
 			response.sendRedirect("http://hxqvivian.lofter.com");
-		//request.getRequestDispatcher("http://hxqvivian.lofter.com").forward(request, response);
 		else if (str.contains("xq"))
 			response.sendRedirect("http://xq.likeyichu.com/qing");
-		//request.getRequestDispatcher("/qing").forward(request, response);
 		else if (str.contains("me"))
-			response.sendRedirect("http://me.likeyichu.com/me");
+			response.sendRedirect("http://me.likeyichu.com/me/views/index.html");
 		else
 			response.sendRedirect("index.jsp");
 	%>
