@@ -60,8 +60,13 @@
 				<div class="saying col-md-5 col-md-offset-7 col-xs-5 col-xs-offset-7">——心中有高考，年年可高考</div>
 			</div>
 
-	</div>
-	
+<div style="padding-top:25%;"></div>
+<div class="container">
+<div id="myAnimationDiv"   style="margin-left: auto; margin-right: auto;background:pink;height:20px;width:40%;text-align:center">
+<a href="">2011 宝丰一高考考成绩单，戳我~</a> 
+</div>
+</div>
+
 	<div class="container myFooter" style="position:absolute">
 		&copy;2015&nbsp;<span class="text">yichu</span>
 		&nbsp;|&nbsp;沪ICP备15017991号
@@ -86,7 +91,15 @@
 		$('#showCountDownID').text(getCountDown());
 	}
 	showCountDown();
-	setInterval("showCountDown()",1000); //定时器
+	setInterval("showCountDown()",1000); //定时器1
+	
+	
+	function myAnimation(){
+	    var div=$("#myAnimationDiv");
+	    div.animate({width:'100%',opacity:'0.4'},"slow");
+	    div.animate({width:'40%',opacity:'1'},"slow");
+	};
+	setInterval("myAnimation()",1000); //定时器2
 	</script>
 </body>
 </html>
