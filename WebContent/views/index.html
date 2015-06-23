@@ -39,67 +39,82 @@
 				</div>
 				<div class="collapse navbar-collapse" id="myNavbarCollapse">
 					<ul class="nav navbar-nav navbar-right">
-						<li class="active"><a href="index.html">首页 </a></li>
-						<li><a href="mePicture.html">图片</a></li>
-						<li><a href="baiduMap.html">位置</a></li>
+						<li class="active"><a href="#" class="dropdown-toggle"
+							data-toggle="dropdown">高考 <b class="caret"></b>
+						</a>
+							<ul class="dropdown-menu">
+								<li><a href="#">高考倒计时</a></li>
+								<li><a href="../ngViews/gaoKaoScore.html">高考成绩</a></li>
+							</ul></li>
+						<li><a href="../views/mePicture.html">图片</a></li>
+						<li><a href="../views/baiduMap.html">位置</a></li>
 					</ul>
 				</div>
 			</div>
 		</nav>
-		<div style="padding-top:25%;"></div>
-	
-			<div class="sayingGround">
-				<br>
-				<div class="saying">距2016高考还有:</div>
+
+		<div style="padding-top: 25%;"></div>
+
+		<div class="sayingGround">
+			<br>
+			<div class="saying">距2016高考还有:</div>
 			<div class="row">
-				 <div class="col-md-11 col-md-offset-1 col-xs-11 col-xs-offset-1" id="showCountDownID"></div>
+				<div class="col-md-11 col-md-offset-1 col-xs-11 col-xs-offset-1"
+					id="showCountDownID"></div>
 			</div>
-			<br>	 
+			<br>
 		</div>
-		<div class="row" style="color:white">
-				<div class="saying col-md-5 col-md-offset-7 col-xs-5 col-xs-offset-7">——心中有高考，年年可高考</div>
-			</div>
+		<div class="row" style="color: white">
+			<div class="saying col-md-5 col-md-offset-7 col-xs-5 col-xs-offset-7">——心中有高考，年年可高考</div>
+		</div>
 
-<div style="padding-top:25%;"></div>
-<div class="container">
-<div id="myAnimationDiv"   style="margin-left: auto; margin-right: auto;background:pink;height:20px;width:40%;text-align:center">
-<a href="">2011 宝丰一高考考成绩单，戳我~</a> 
-</div>
-</div>
+		<div style="padding-top: 25%;"></div>
+	</div>
+	<div class="container">
+		<div id="myAnimationDiv"
+			style="margin-left: auto; margin-right: auto; background: pink; height: 20px; width: 40%; text-align: center">
+			<a href="../ngViews/gaoKaoScore.html">2011 宝丰一高考考成绩单，戳我~</a>
+		</div>
+	</div>
 
-	<div class="container myFooter" style="position:absolute">
+	<div class="container myFooter" style="position: absolute">
 		&copy;2015&nbsp;<span class="text">yichu</span>
 		&nbsp;|&nbsp;沪ICP备15017991号
 	</div>
 	<script>
-	function getCountDown() {
-		var timeSpanBySeconds = (new Date(2016, 6 - 1, 7, 9,
-				0, 0, 0).getTime() - new Date().getTime()) / 1000;//by second
-		var days = timeSpanBySeconds / (3600 * 24);
-		days = Math.floor(days);
-		var hours = (timeSpanBySeconds - days * 3600 * 24) / 3600;
-		hours = Math.floor(hours);
-		var minutes = (timeSpanBySeconds - days * 3600 * 24 - hours * 3600) / 60;
-		minutes = Math.floor(minutes);
-		var seconds = timeSpanBySeconds % 60;
-		seconds = Math.floor(seconds);
-		var str = days + " days " + hours + " hours " + minutes
-				+ " minutes " + seconds + " seconds ";
-		return str;
-	}
-	function showCountDown(){
-		$('#showCountDownID').text(getCountDown());
-	}
-	showCountDown();
-	setInterval("showCountDown()",1000); //定时器1
-	
-	
-	function myAnimation(){
-	    var div=$("#myAnimationDiv");
-	    div.animate({width:'100%',opacity:'0.4'},"slow");
-	    div.animate({width:'40%',opacity:'1'},"slow");
-	};
-	setInterval("myAnimation()",1000); //定时器2
+		function getCountDown() {
+			var timeSpanBySeconds = (new Date(2016, 6 - 1, 7, 9, 0, 0, 0)
+					.getTime() - new Date().getTime()) / 1000;//by second
+			var days = timeSpanBySeconds / (3600 * 24);
+			days = Math.floor(days);
+			var hours = (timeSpanBySeconds - days * 3600 * 24) / 3600;
+			hours = Math.floor(hours);
+			var minutes = (timeSpanBySeconds - days * 3600 * 24 - hours * 3600) / 60;
+			minutes = Math.floor(minutes);
+			var seconds = timeSpanBySeconds % 60;
+			seconds = Math.floor(seconds);
+			var str = days + " days " + hours + " hours " + minutes
+					+ " minutes " + seconds + " seconds ";
+			return str;
+		}
+		function showCountDown() {
+			$('#showCountDownID').text(getCountDown());
+		}
+		showCountDown();
+		setInterval("showCountDown()", 1000); //定时器1
+
+		function myAnimation() {
+			var div = $("#myAnimationDiv");
+			div.animate({
+				width : '100%',
+				opacity : '0.4'
+			}, "slow");
+			div.animate({
+				width : '40%',
+				opacity : '1'
+			}, "slow");
+		};
+		setInterval("myAnimation()", 1000); //定时器2
 	</script>
 </body>
 </html>
