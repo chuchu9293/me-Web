@@ -1,3 +1,9 @@
+@media screen and (max-width: 600px) { /*当屏幕尺寸小于600px时，应用下面的CSS样式*/
+	body {
+		font-size: 12px;
+	}
+}
+
 /*页脚*/
 .myFooter {
 	width: 100%;
@@ -27,17 +33,19 @@ div .text {
 
 /*标语*/
 .sayingGround {
-	background-color:rgba(0,255,0,0.5);
+	background-color: rgba(0, 255, 0, 0.5);
 }
-.saying{
-	font-size:2em;
-	font-family:微软雅黑;
-	opacity:1;
-	font-weight:bold;
+
+.saying {
+	font-size: 2em;
+	font-family: 微软雅黑;
+	opacity: 1;
+	font-weight: bold;
 }
-#showCountDownID{
-	font-size:2em;
-	font-family:verdana;
-	color:red;
-	font-weight:normal;
+
+#showCountDownID {
+	font-size: 2em;
+	font-family: verdana;
+	color: red;
+	font-weight: normal;
 }

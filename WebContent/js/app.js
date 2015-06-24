@@ -12,8 +12,7 @@ angular
 								"http://me.likeyichu.com/webService/gaoKaoScore/science?from=1&to=200")
 								//"http://localhost:8080/webService/gaoKaoScore/science?from=1&to=200")
 								.success(function(response) {
-									$scope.science1 = response;
-									$scope.gaoKaoScoreList=$scope.science1;
+									$scope.gaoKaoScoreList=response;
 								});
 					}//$scope.getScience1
 					
@@ -23,8 +22,7 @@ angular
 										"http://me.likeyichu.com/webService/gaoKaoScore/science?from=201&to=400")
 								//"http://localhost:8080/webService/gaoKaoScore/science?from=201&to=400")
 								.success(function(response) {
-									$scope.science2 = response;
-									$scope.gaoKaoScoreList=$scope.science2;
+									$scope.gaoKaoScoreList=response;
 								});
 					}//$scope.getScience2
 					
@@ -33,8 +31,7 @@ angular
 								.get(
 										"http://me.likeyichu.com/webService/gaoKaoScore/science?from=401&to=600")
 								.success(function(response) {
-									$scope.science3 = response;
-									$scope.gaoKaoScoreList=$scope.science3;
+									$scope.gaoKaoScoreList=response;
 								});
 					}//$scope.getScience3
 					
@@ -43,8 +40,7 @@ angular
 								.get(
 										"http://me.likeyichu.com/webService/gaoKaoScore/science?from=601&to=800")
 								.success(function(response) {
-									$scope.science4 = response;
-									$scope.gaoKaoScoreList=$scope.science4;
+									$scope.gaoKaoScoreList=response;
 								});
 					}//$scope.getScience4
 					
@@ -53,8 +49,7 @@ angular
 								.get(
 										"http://me.likeyichu.com/webService/gaoKaoScore/science?from=801&to=1000")
 								.success(function(response) {
-									$scope.science5 = response;
-									$scope.gaoKaoScoreList=$scope.science5;
+									$scope.gaoKaoScoreList=response;
 								});
 					}//$scope.getScience5
 					
