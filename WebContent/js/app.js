@@ -6,53 +6,29 @@ angular
 		.controller(
 				"appCtrl",
 				function($scope, $http) {
-					$scope.getScience1 = function() {
+					//type为Science表示理科，Arts表示文科
+					//[from,to]表示名次区间
+					$scope.getTable = function(type,from,to) {
 						$http
 								.get(
-								"http://me.likeyichu.com/webService/gaoKaoScore/science?from=1&to=200")
+								"http://me.likeyichu.com/webService/gaoKaoScore/"+type+"?from="+from+"&to="+to)
 								//"http://localhost:8080/webService/gaoKaoScore/science?from=1&to=200")
 								.success(function(response) {
 									$scope.gaoKaoScoreList=response;
 								});
 					}//$scope.getScience1
 					
-					$scope.getScience2 = function() {
+					$scope.getTable("arts",1,200);
+					$scope.fuzzyQuery=function(name){
 						$http
-								.get(
-										"http://me.likeyichu.com/webService/gaoKaoScore/science?from=201&to=400")
-								//"http://localhost:8080/webService/gaoKaoScore/science?from=201&to=400")
-								.success(function(response) {
-									$scope.gaoKaoScoreList=response;
-								});
-					}//$scope.getScience2
-					
-					$scope.getScience3 = function() {
-						$http
-								.get(
-										"http://me.likeyichu.com/webService/gaoKaoScore/science?from=401&to=600")
-								.success(function(response) {
-									$scope.gaoKaoScoreList=response;
-								});
-					}//$scope.getScience3
-					
-					$scope.getScience4 = function() {
-						$http
-								.get(
-										"http://me.likeyichu.com/webService/gaoKaoScore/science?from=601&to=800")
-								.success(function(response) {
-									$scope.gaoKaoScoreList=response;
-								});
-					}//$scope.getScience4
-					
-					$scope.getScience5 = function() {
-						$http
-								.get(
-										"http://me.likeyichu.com/webService/gaoKaoScore/science?from=801&to=1000")
-								.success(function(response) {
-									$scope.gaoKaoScoreList=response;
-								});
-					}//$scope.getScience5
-					
+						.get(
+						"http://me.likeyichu.com/webService/gaoKaoScore/"+name)
+						.success(function(response) {
+							if(response.length==0)
+								response[0]={no:"无结果"};
+							$scope.gaoKaoScoreList=response;
+						});
+					}
 				}
 
 		);
