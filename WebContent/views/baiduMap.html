@@ -14,7 +14,9 @@
 
 <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
 <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
-
+<!-- HighCharts -->
+<script type="text/javascript"
+	src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
@@ -29,34 +31,96 @@
 </head>
 <body class="container">
 	<nav class="navbar navbar-default myOpcity">
-			<div class="container-fluid">
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed "
-						data-toggle="collapse" data-target="#myNavbarCollapse">
-						<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-							class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="#">易初|yichu</a>
-				</div>
-				<div class="collapse navbar-collapse" id="myNavbarCollapse">
-					<ul class="nav navbar-nav navbar-right">
-						<li ><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown">高考 <b class="caret"></b>
-						</a>
-							<ul class="dropdown-menu">
-								<li><a href="../views/index.html">高考倒计时</a></li>
-								<li><a href="../ngViews/gaoKaoScore.html">高考成绩</a></li>
-							</ul></li>
-						<li><a href="../views/picture.html">图片</a></li>
-						<li><a href="../views/inDHU.html">我在东华</a></li>
-						<li><a href="../views/cooking.html">做饭</a></li>
-						<li class="active"><a href="#">位置</a></li>
-						<li ><a href="../ngViews/visit.html">访问统计</a></li>
-					</ul>
-				</div>
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed "
+					data-toggle="collapse" data-target="#myNavbarCollapse">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">易初|yichu</a>
 			</div>
-		</nav>
+			<div class="collapse navbar-collapse" id="myNavbarCollapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown">高考 <b class="caret"></b>
+					</a>
+						<ul class="dropdown-menu">
+							<li><a href="../views/index.html">高考倒计时</a></li>
+							<li><a href="../ngViews/gaoKaoScore.html">高考成绩</a></li>
+						</ul></li>
+					<li><a href="../views/picture.html">图片</a></li>
+					<li><a href="../views/inDHU.html">我在东华</a></li>
+					<li><a href="../views/cooking.html">做饭</a></li>
+					<li class="active"><a href="#">位置</a></li>
+					<li><a href="../ngViews/visit.html">访问统计</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="panel panel-warning">
+		<div class="panel-heading">2015城市房价</div>
+		<div class="panel-body">
+			<div id="housePrice"></div>
+			<script>
+    $(function () {
+    $('#housePrice').highcharts({
+        title: {
+            text: '2015城市房价',
+            x: -20 //center
+        },
+        subtitle: {
+            text: 'Source: anjuke.com',
+            x: -20
+        },
+        xAxis: {
+            categories: ['1月', '2月', '3月', '4月', '5月', '6月','7月', '8月', '9月', '10月', '11月', '12月']
+        },
+        yAxis: {
+            title: {
+                text: ''
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }],
+			tickPositions: [0,5000, 10000, 15000, 20000,25000,30000,35000,40000,45000,50000,55000,60000,65000,70000,75000,80000] // 指定竖轴坐标点的值
+        },
+        tooltip: {
+            valueSuffix: '元'
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [{
+            name: '上海长宁',
+            data: [69625,69250,69250,70250,74444,74444,73333]
+        }, {
+            name: '上海',
+            data: [32542,31356,31571,31663,31767,31898,32033]
+        }, {
+            name: '郑州',
+            data: [7949,8066,8197,8221,8129,8082,8162]
+        }, {
+            name: '平顶山',
+            data: [5000, 5000,5000,5000,5000,5000,5000]
+        },
+		  {
+		    name: '宝丰',
+            data: [2500, 2500,2500,2500,2500,2500,2500]
+		  }]
+    });
+});
+				
+  </script>
+		</div>
+	</div>
+	<div style="height:20px"></div>
 	<div class="panel panel-info">
 		<div class="panel-heading">我的学校宿舍</div>
 	</div>
@@ -65,7 +129,7 @@
 			baiduMap();
 		</script>
 	</div>
-	<div class="panel panel-info" style="margin-top: 5%">
+	<div class="panel panel-success" style="margin-top: 5%">
 		<div class="panel-heading">三人合租的房子，主卧是我的哦</div>
 		<div class="panel-body">
 			<div style="height: 480px; position: relative">
@@ -75,11 +139,6 @@
 			</div>
 		</div>
 	</div>
-	<div class="myFooter">
-		&copy;2015&nbsp;<span class="text">yichu</span>
-		&nbsp;|&nbsp;沪ICP备15017991号
-	</div>
-
-
+	<iframe src="footer.html" frameborder="no" border="0" style="width: 100%;"></iframe>
 </body>
 </html>
