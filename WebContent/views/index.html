@@ -14,6 +14,7 @@
 
 <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
 <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/jquery-easing/1.3/jquery.easing.min.js"></script>
 
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
@@ -39,10 +40,10 @@
 				</div>
 				<div class="collapse navbar-collapse" id="myNavbarCollapse">
 					<ul class="nav navbar-nav navbar-right">
-						<li class="active"><a href="#" class="dropdown-toggle"
+						<li class="active" id="gaoKaoID"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown">高考 <b class="caret"></b>
 						</a>
-							<ul class="dropdown-menu">
+							<ul class="dropdown-menu" id="gaoKaoChildID">
 								<li><a href="#">高考倒计时</a></li>
 								<li><a href="../ngViews/gaoKaoScore.html">高考成绩</a></li>
 							</ul></li>
@@ -51,6 +52,7 @@
 						<li><a href="../views/cooking.html">做饭</a></li>
 						<li><a href="../views/baiduMap.html">位置</a></li>
 						<li><a href="../ngViews/visit.html">访问统计</a></li>
+						<li><a href="../views/logo.html" target="_blank">logo筹备</a></li>
 					</ul>
 				</div>
 			</div>
@@ -102,11 +104,8 @@
 					+ " minutes " + seconds + " seconds ";
 			return str;
 		}
-		function showCountDown() {
-			$('#showCountDownID').text(getCountDown());
-		}
-		showCountDown();
-		setInterval("showCountDown()", 1000); //定时器1
+		$('#showCountDownID').text(getCountDown());
+		setInterval(function(){$('#showCountDownID').text(getCountDown());}, 1000); //定时器1
 
 		function myAnimation() {
 			var div = $("#myAnimationDiv");
@@ -119,6 +118,19 @@
 				opacity : '1'
 			}, "slow");
 		};
+		myAnimation();
 		setInterval("myAnimation()", 1000); //定时器2
+		
+		$('#gaoKaoID').hover(function(){
+			$('#gaoKaoChildID').css("height","20px").show();
+			$('#gaoKaoChildID').animate({height:"200px"},{
+				duration:1000,
+				easing:'easeOutBounce'
+			})
+		},
+		function(){
+			setTimeout(function(){$('#gaoKaoChildID').hide();},500)
+		});
+		
 	</script>
 </html>
