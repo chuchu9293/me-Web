@@ -40,8 +40,9 @@
 				</div>
 				<div class="collapse navbar-collapse" id="myNavbarCollapse">
 					<ul class="nav navbar-nav navbar-right">
-						<li class="active" id="gaoKaoID"><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown">高考 <b class="caret"></b>
+						<li class="active" id="gaoKaoID"><a href="#">高考 
+						<!-- 小的下三角 -->
+						<b class="caret"></b>
 						</a>
 							<ul class="dropdown-menu" id="gaoKaoChildID">
 								<li><a href="#">高考倒计时</a></li>
@@ -121,11 +122,12 @@
 		myAnimation();
 		setInterval("myAnimation()", 1000); //定时器2
 		
+		
 		$('#gaoKaoID').hover(function(){
-			$('#gaoKaoChildID').css("height","20px").show();
-			$('#gaoKaoChildID').animate({height:"200px"},{
+			$('#gaoKaoChildID').css("height","0px").show();
+			$('#gaoKaoChildID').animate({height:"100px"},{
 				duration:1000,
-				easing:'easeOutBounce'
+				easing:'easeOutBounce'//底部反弹效果
 			})
 		},
 		function(){
