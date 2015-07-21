@@ -22,5 +22,9 @@ $(function(){
 	function(){
 		setTimeout(function(){$('#gaoKaoChildID').hide();},500)
 	});
+	
+	//footer iframe高度调整
+//	var footerRealHeight=window.frames["footerIframe"].document.body.scrollHeight;
+//	$('#footerID').css('height',60);
 });
 
