@@ -8,42 +8,46 @@
 <link rel="stylesheet"
 	href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/jquery-easing/1.3/jquery.easing.min.js"></script>
 <script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<!-- own -->
 <link rel="stylesheet" href="../css/app.css">
 <link rel="stylesheet" href="../css/baiduTimeLine.css">
+<script src="../js/navicateBar.js"></script>
 <title>杜易初|Young Rhythm</title>
 </head>
 <body>
 	<div class="container">
-		<nav class="navbar navbar-default myOpcity">
-			<div class="container-fluid">
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed "
-						data-toggle="collapse" data-target="#myNavbarCollapse">
-						<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-							class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="#">易初|yichu</a>
-				</div>
-				<div class="collapse navbar-collapse" id="myNavbarCollapse">
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown">高考 <b class="caret"></b>
-						</a>
-							<ul class="dropdown-menu">
-								<li><a href="index.html">高考倒计时</a></li>
-								<li><a href="../ngViews/gaoKaoScore.html">高考成绩</a></li>
-							</ul></li>
-						<li><a href="../views/picture.html">图片</a></li>
-						<li class="active"><a href="#">我在东华</a></li>
-						<li><a href="../views/cooking.html">做饭</a></li>
-						<li><a href="../views/baiduMap.html">位置</a></li>
-						<li><a href="../ngViews/visit.html">访问统计</a></li>
-					</ul>
-				</div>
+<nav class="navbar navbar-default myOpcity">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed "
+					data-toggle="collapse" data-target="#myNavbarCollapse">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">易初|yichu</a>
 			</div>
-		</nav>
+			<div class="collapse navbar-collapse" id="myNavbarCollapse">
+				<ul id="navBarID" class="nav navbar-nav navbar-right">
+					<li id="gaoKaoID"><a href="../views/index.html">高考 <!-- 小的下三角 --> <b
+							class="caret"></b>
+					</a>
+						<ul class="dropdown-menu" id="gaoKaoChildID">
+							<li><a href="../views/index.html">高考倒计时</a></li>
+							<li><a href="../ngViews/gaoKaoScore.html">高考成绩</a></li>
+						</ul></li>
+					<li><a href="../views/picture.html">图片</a></li>
+					<li><a href="../views/inDHU.html">我在东华</a></li>
+					<li><a href="../views/cooking.html">做饭</a></li>
+					<li><a href="../views/location.html">位置</a></li>
+					<li><a href="../ngViews/visit.html">访问统计</a></li>
+					<li><a href="../views/logo.html" target="_blank">logo筹备</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 	</div>
 	<div id="sideCatalog" class="sideCatalogBg"
 		style="visibility: visible; position: fixed">
